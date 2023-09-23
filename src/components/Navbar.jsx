@@ -1,8 +1,8 @@
 import React from "react";
 import iconogpt from "../assets/chatgpticon.png";
-import iconogptdark from "../assets/chatgpticon2.png"
+import iconogptdark from "../assets/chatgpticon2.png";
 
-const Navbar = ({darkMode, changeMode}) => {
+const Navbar = ({ darkMode, changeMode }) => {
   return (
     <div className="sticky-top">
       <nav
@@ -19,17 +19,28 @@ const Navbar = ({darkMode, changeMode}) => {
           <a className="navbar-brand" href="#">
             ChatGPT
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <div className="d-flex align-items-center order-lg-1">
+            <div className="form-check form-switch me-3">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckChecked"
+                onChange={changeMode}
+              />
+            </div>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -48,15 +59,6 @@ const Navbar = ({darkMode, changeMode}) => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="form-check form-switch">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckChecked"
-              onChange={changeMode}
-            />
           </div>
         </div>
       </nav>
