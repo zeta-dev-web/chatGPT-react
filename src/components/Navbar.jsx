@@ -11,14 +11,16 @@ const Navbar = ({ darkMode, changeMode }) => {
         }`}
       >
         <div className="container-fluid">
-          <img
-            src={darkMode ? iconogptdark : iconogpt}
-            alt="chatgpt"
-            className="iconogpt"
-          />
-          <a className="navbar-brand" href="#">
-            ChatGPT
-          </a>
+          <div className="d-flex align-items-start">
+            <img
+              src={darkMode ? iconogptdark : iconogpt}
+              alt="chatgpt"
+              className="iconogpt pt-1 me-1"
+            />
+            <a className="navbar-brand" href="#">
+              ChatGPT
+            </a>
+          </div>
           <div className="d-flex align-items-center order-lg-1">
             <div className="form-check form-switch me-3">
               <input
