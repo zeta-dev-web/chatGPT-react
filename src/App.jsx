@@ -15,7 +15,7 @@ setDarkMode(!darkMode)
       <Navbar darkMode={darkMode} changeMode={changeMode}/>
       <Carousel />
       <div className="container">
-        <div className="row mt-5 pb-5">
+        <div className="row mt-3 pb-5">
           {detalleCard.map((item, index) => (
             <CardApp key={index} item={item} darkMode={darkMode}/>
           ))}

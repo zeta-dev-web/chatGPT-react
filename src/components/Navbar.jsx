@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { obtenerClima } from "../helpers/climaApi";
 import iconogpt from "../assets/chatgpticon.png";
 import iconogptdark from "../assets/chatgpticon2.png";
 
 const Navbar = ({ darkMode, changeMode }) => {
+  const [tiempo, setTiempo] = useState(null);
+useEffect(() => {
+  clima();
+}, [])
+
+
+  const clima = () => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      const coords = pos.coords;
+      const lat = coords.latitude;
+      const long = coords.longitude;
+      obtenerClima(lat, long)
+        .then((resultado) => {const {data} = resultado
+const { values } = data;
+setTiempo({temp: values.temperature,
+clima: values.weatherCode})
+})
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
+
   return (
     <div className="sticky-top">
       <nav

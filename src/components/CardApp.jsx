@@ -1,9 +1,8 @@
 import React from 'react'
 
 const CardApp = ({item,darkMode}) => {
-    console.log(item);
   return (
-    <div className="col-12 col-md">
+    <div className="col-12 col-md pt-2 pt-lg-0">
       <div className="card h-100">
         <div
           className={`card-body d-flex flex-column align-items-center ${
